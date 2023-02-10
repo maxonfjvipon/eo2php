@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.eolang</groupId>
+    <artifactId>quick-start</artifactId>
+    <version>0.0.1</version>
+
+    <properties>
+        <maven.compiler.source>19</maven.compiler.source>
+        <maven.compiler.target>19</maven.compiler.target>
+        <eo2php.version>0.0.1</eo2php.version>
+        <eo.version>0.28.18</eo.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.eolang</groupId>
+                <artifactId>eo-maven-plugin</artifactId>
+                <version>0.28.18</version>
+                <configuration>
+                    <foreign>${project.basedir}/target/eo/foreign.csv</foreign>
+                    <foreignFormat>csv</foreignFormat>
+                    <hash>master</hash>
+                    <!-- @todo #1584:90min Set failOnWarning to 'true'. It's not a good idea to allow deploy artifacts with warnings. It's only temporary solution. -->
+                    <failOnWarning>false</failOnWarning>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>register</goal>
+                            <goal>parse</goal>
+                            <goal>optimize</goal>
+                            <goal>discover-foreign</goal>
+                            <goal>probe</goal>
+                            <goal>pull</goal>
+                            <goal>resolve</goal>
+                        </goals>
+                        <configuration>
+                            <withRuntimeDependency>false</withRuntimeDependency>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

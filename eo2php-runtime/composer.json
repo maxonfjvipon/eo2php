@@ -1,0 +1,20 @@
+{
+    "name": "objectionary/eo2php-runtime",
+    "description": "Everything required to run php files created by eo2php-maven-plugin",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Objectionary\\Eo2phpRuntime\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Max Trunnikov",
+            "email": "mtrunnikov@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1"
+    }
+}

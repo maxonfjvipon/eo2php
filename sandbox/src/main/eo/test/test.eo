@@ -1,0 +1,4 @@
++package sandbox.test
+
+[] > test
+  "name" > name

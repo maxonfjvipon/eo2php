@@ -1,0 +1,3 @@
+# Project exclude paths
+/eo2php-maven-plugin/target/
+/sandbox/target/
